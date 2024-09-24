@@ -17,6 +17,7 @@ use App\Http\Controllers\Backend\SettingController;
 use App\Http\Controllers\Backend\TestimonialController;
 use App\Http\Controllers\Backend\GalleryController;
 use App\Http\Controllers\Backend\RoleController;
+use App\Http\Controllers\doc\DocController;
 use App\Http\Controllers\Frontend\PagesFrontendController;
 use App\Http\Middleware\AdminRole;
 
@@ -334,6 +335,12 @@ Route::controller(BlogController::class)->group(function(){
 Route::controller(PagesFrontendController::class)->group(function(){ 
    Route::get('/a-propos', 'APropos')->name('apropos');
    Route::get('/restaurant', 'Restaurant')->name('restaurant');
+
+});
+
+Route::controller(DocController::class)->group(function(){ 
+   Route::get('/Documentation', 'Doc')->name('doc');
+   Route::get('/HotelGes+', 'HotelGes')->name('hotelges');
 
 });
 
