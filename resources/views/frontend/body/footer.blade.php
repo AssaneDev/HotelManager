@@ -35,49 +35,49 @@ $setting = App\Models\SiteSetting::find(1);
     
                         <div class="col-lg-3 col-md-6">
                             <div class="footer-widget pl-5">
-                                <h3>Links</h3>
+                                <h3>Liens Rapide</h3>
                                 <ul class="footer-list">
                                     <li>
-                                        <a href="about.html" target="_blank">
+                                        <a href="{{route('apropos')}}">
                                             <i class='bx bx-caret-right'></i>
-                                            About Us
+                                            A Propos
                                         </a>
                                     </li> 
                                     <li>
-                                        <a href="services-1.html" target="_blank">
+                                        <a href="{{route('from.all')}}" >
                                             <i class='bx bx-caret-right'></i>
-                                            Services
+                                            Chambres 
                                         </a>
                                     </li> 
                                     <li>
-                                        <a href="team.html" target="_blank">
+                                        <a href="{{route('blog.list')}}" >
                                             <i class='bx bx-caret-right'></i>
-                                            Team
+                                            Blog
                                         </a>
                                     </li> 
                                     <li>
-                                        <a href="gallery.html" target="_blank">
+                                        <a href="{{route('show.gallery')}}" >
                                             <i class='bx bx-caret-right'></i>
-                                            Gallery
+                                            Gallerie
                                         </a>
                                     </li> 
                                     <li>
-                                        <a href="terms-condition.html" target="_blank">
+                                        <a href="{{route('restaurant')}}">
                                             <i class='bx bx-caret-right'></i>
-                                            Terms 
+                                            Restaurant
                                         </a>
                                     </li> 
                                     <li>
-                                        <a href="privacy-policy.html" target="_blank">
+                                        <a href="#">
                                             <i class='bx bx-caret-right'></i>
-                                            Privacy Policy
+                                            Recrutements
                                         </a>
                                     </li> 
                                 </ul>
                             </div>
                         </div>
     
-                        <div class="col-lg-3 col-md-6">
+                        {{-- <div class="col-lg-3 col-md-6">
                             <div class="footer-widget">
                                 <h3>Useful Links</h3>
                                 <ul class="footer-list">
@@ -119,14 +119,13 @@ $setting = App\Models\SiteSetting::find(1);
                                     </li> 
                                 </ul>
                             </div>
-                        </div>
+                        </div> --}}
     
                         <div class="col-lg-3 col-md-6">
                             <div class="footer-widget">
                                 <h3>Newsletter</h3>
                                 <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                                    Nullam tempor eget ante fringilla rutrum aenean sed venenatis .
+                                   Restez informer de nos nouveautées & promotions
                                 </p>
                                 <div class="footer-form">
                                     <form class="newsletter-form" data-toggle="validator" method="POST">
@@ -139,7 +138,7 @@ $setting = App\Models\SiteSetting::find(1);
     
                                             <div class="col-lg-12 col-md-12">
                                                 <button type="submit" class="default-btn btn-bg-one">
-                                                    Subscribe Now
+                                                    S'inscrire Maintenant
                                                 </button>
                                                 <div id="validator-newsletter" class="form-result"></div>
                                             </div>

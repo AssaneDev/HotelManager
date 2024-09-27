@@ -8,12 +8,12 @@
                 <div class="inner-title">
                     <ul>
                         <li>
-                            <a href="index.html">Home</a>
+                            <a href="index.html">Acceuil</a>
                         </li>
                         <li><i class='bx bx-chevron-right'></i></li>
-                        <li>Rooms</li>
+                        <li>Chambres & Suites</li>
                     </ul>
-                    <h3>Rooms</h3>
+                    <h3>Chambres & Suites</h3>
                 </div>
             </div>
         </div>
@@ -23,8 +23,8 @@
         <div class="room-area pt-100 pb-70">
             <div class="container">
                 <div class="section-title text-center">
-                    <span class="sp-color">ROOMS</span>
-                    <h2>Our Rooms & Rates</h2>
+                    <span class="sp-color">Chambres</span>
+                    <h2>Chambres Disponibles</h2>
                 </div>
                 <div class="row pt-45">
                     <?php $empty_array = [] ?>
@@ -53,7 +53,7 @@
                                     <a style="color: black" href="{{ route('search_room_details',$item->id.'?check_in='.old('check_in').'&check_out='.old('check_out').'&person='.old('person')) }}">{{$item['type']['name'] ?? null}}</a>
                                 </h6>
                                 <ul>
-                                    <li class="text-color">{{$item->price}}  €</li>
+                                    <li class="text-color">{{$item->price}}  Fcfa</li>
                                     <li class="text-color">Nuit</li>
                                 </ul>
                                 <div class="rating text-color">

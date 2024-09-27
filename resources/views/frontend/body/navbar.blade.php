@@ -64,7 +64,7 @@ $setting = App\Models\SiteSetting::find(1);
                             <a href="{{route('from.all')}}" class="nav-link">
                                 Nos Chambres
                             </a>
-                            <ul class="dropdown-menu">
+                            {{-- <ul class="dropdown-menu">
                                 @foreach ($room as $item)
                                 <li class="nav-item">
                                     <a href="room.html" class="nav-link">
@@ -74,7 +74,7 @@ $setting = App\Models\SiteSetting::find(1);
                                 @endforeach
                                 
                              
-                            </ul>
+                            </ul> --}}
                         </li>
 
                         <li class="nav-item">

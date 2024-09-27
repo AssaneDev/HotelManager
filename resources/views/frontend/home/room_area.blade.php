@@ -16,7 +16,7 @@ $room = App\Models\Room::latest()->limit(4)->get();
                         <div class="row align-items-center">
                             <div class="col-lg-5 col-md-4 p-0">
                                 <div class="room-card-img">
-                                    <a href="{{ url('/room/details/'.$item->id) }}">
+                                    <a href="{{ route('search_room_details',$item->id.'?check_in='.\Carbon\Carbon::now()->format('Y-m-d').'&check_out='. \Carbon\Carbon::now()->format('Y-m-d') .'&person='.old('person')) }}">
                                         <img src="{{asset('upload/roomimg/'.$item->image)}}" alt="Images">
                                     </a>
                                 </div>
@@ -25,9 +25,9 @@ $room = App\Models\Room::latest()->limit(4)->get();
                             <div class="col-lg-7 col-md-8 p-0">
                                 <div class="room-card-content">
                                     <h3>
-                                        <a href="{{ url('/room/details/'.$item->id) }}">{{$item['type']['name'] ?? null}}"</a>
+                                         <a href="{{ route('search_room_details',$item->id.'?check_in='.\Carbon\Carbon::now()->format('Y-m-d').'&check_out='. \Carbon\Carbon::now()->format('Y-m-d') .'&person='.old('person')) }}">{{$item['type']['name'] ?? null}}</a>
                                     </h3>
-                                    <span>{{$item->price}} €/ Par nuit </span>
+                                    <span>{{$item->price}} Fcfa/ Par nuit </span>
                                     <div class="rating">
                                         <i class='bx bxs-star'></i>
                                         <i class='bx bxs-star'></i>
@@ -37,7 +37,7 @@ $room = App\Models\Room::latest()->limit(4)->get();
                                     </div>
                                     <p>{{$item->short_desc}}.</p>
                                     <ul>
-                                        <li><i class='bx bx-user'></i> {{$item->room_capacity}} Personne</li>
+                                        <li><i class='bx bx-user'></i> {{$item->room_capacity}} Personnes</li>
                                         <li><i class='bx bx-expand'></i> {{$item->size}}</li>
                                     </ul>
 
@@ -46,7 +46,7 @@ $room = App\Models\Room::latest()->limit(4)->get();
                                         <li><i class='bx bxs-hotel'></i> {{$item->bed_style}}</li>
                                     </ul>
                                     
-                                    <a href="{{ url('/room/details/'.$item->id) }}" class="book-more-btn">
+                                    <a href="{{ route('search_room_details',$item->id.'?check_in='.\Carbon\Carbon::now()->format('Y-m-d').'&check_out='. \Carbon\Carbon::now()->format('Y-m-d') .'&person='.old('person')) }}" class="book-more-btn">
                                         Reservez Maintenant
                                     </a>
                                 </div>

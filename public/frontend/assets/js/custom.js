@@ -249,34 +249,64 @@
     $('#datetimepicker-check').datepicker();
 
     $('.dt_picker').datepicker({
-        dateFormat: 'yy-mm-dd',
+        dateFormat: 'dd-mm-yy',
         autoclose: true,
         minDate: 0
     });
 
 
-    $("#startdate").datepicker({
-        todayBtn:  1,
-        startDate: new Date(),
-        format: 'yyyy-mm-dd' ,
-        autoclose: true,
-        yearSelect: function(current) {
-            return [current - 10, current + 10];
-        },
-    }).on('changeDate', function (selected) {
-        var minDate = new Date(selected.date.valueOf());
-        minDate.setDate(minDate.getDate() + 1);
+   // Inclure le fichier de localisation française
+$.datepicker.regional['fr'] = {
+    closeText: 'Fermer',
+    prevText: 'Précédent',
+    nextText: 'Suivant',
+    currentText: 'Aujourd\'hui',
+    monthNames: ['janvier','février','mars','avril','mai','juin',
+    'juillet','août','septembre','octobre','novembre','décembre'],
+    monthNamesShort: ['janv.','févr.','mars','avr.','mai','juin',
+    'juil.','août','sept.','oct.','nov.','déc.'],
+    dayNames: ['dimanche','lundi','mardi','mercredi','jeudi','vendredi','samedi'],
+    dayNamesShort: ['dim.','lun.','mar.','mer.','jeu.','ven.','sam.'],
+    dayNamesMin: ['D','L','M','M','J','V','S'],
+    weekHeader: 'Sem.',
+    dateFormat: 'yy-mm-dd',
+    firstDay: 1,
+    isRTL: false,
+    showMonthAfterYear: false,
+    yearSuffix: ''
+};
 
-        $('#enddate').datepicker('setStartDate', minDate);
-        $('#enddate').val('');
-    });
+// Appliquer la localisation française
+$.datepicker.setDefaults($.datepicker.regional['fr']);
 
-    $("#enddate").datepicker({
-        format: 'yyyy-mm-dd',
-        autoclose: true,
-    }).on('changeDate', function (selected) {
-        console.log('ok')
-    });
+$('.dt_picker').datepicker({
+    dateFormat: 'dd-mm-yy',
+    autoclose: true,
+    minDate: 0
+});
+
+$("#startdate").datepicker({
+    todayBtn: 1,
+    startDate: new Date(),
+    format: 'dd-mm-yyyy',
+    autoclose: true,
+    yearSelect: function(current) {
+        return [current - 10, current + 10];
+    },
+}).on('changeDate', function (selected) {
+    var minDate = new Date(selected.date.valueOf());
+    minDate.setDate(minDate.getDate() + 1);
+
+    $('#enddate').datepicker('setStartDate', minDate);
+    $('#enddate').val('');
+});
+
+$("#enddate").datepicker({
+    format: 'dd-mm-yyyy',
+    autoclose: true,
+}).on('changeDate', function (selected) {
+    console.log('ok')
+});
 
     // WOW JS
     new WOW().init();

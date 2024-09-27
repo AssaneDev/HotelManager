@@ -7,12 +7,12 @@
                     <div class="inner-title">
                         <ul>
                             <li>
-                                <a href="index.html">Home</a>
+                                <a href="index.html">Acceuil</a>
                             </li>
                             <li><i class='bx bx-chevron-right'></i></li>
-                            <li> Check Out</li>
+                            <li>Finalisation</li>
                         </ul>
-                        <h3> Check Out</h3>
+                        <h3> Réservation</h3>
                     </div>
                 </div>
             </div>
@@ -26,7 +26,8 @@
                         <div class="row">
                             <div class="col-lg-8">
                                 <div class="billing-details">
-                                    <h3 class="title">Billing Details</h3>
+                                    <h3 class="title">Détails de facturation
+                                    </h3>
     
                                     <div class="row">
                                         <div class="col-lg-12 col-md-12">
@@ -117,7 +118,7 @@
                                                       <img style="height:100px; width:120px;object-fit: cover" src=" {{ (!empty($room->image)) ? url('upload/roomimg/'.$room->image):url('upload/no_image.jpg') }} " alt="Images" alt="Images">
                                                       <div style="padding-left: 10px;">
                                                             <a href=" " style="font-size: 20px; color: #595959;font-weight: bold"> {{ @$room->type->name }} </a>
-                                                            <p><b> {{$room->price}}€ / Nuit</b></p>
+                                                            <p><b> {{$room->price}}Fcfa / Nuit</b></p>
                                                       </div>
                   
                                                 </div>
@@ -132,7 +133,9 @@
                                                     @endphp
                                                        
                                                       <tr>
-                                                            <td><p> Du  {{$book_data['check_in']}} au {{$book_data['check_out']}}</p></td>
+                                                            {{-- <td><p> Du  {{$book_data['check_in']}} au {{$book_data['check_out']}}</p></td> --}}
+                                                            <td><p> Du {{ \Carbon\Carbon::parse($book_data['check_in'])->format('d-m-Y') }} au {{ \Carbon\Carbon::parse($book_data['check_out'])->format('d-m-Y') }}</p></td>
+
                                                             <td style="text-align: right"><p>{{$nights}} Nuits</p></td>
                                                       </tr>
                                                       <tr>
@@ -141,15 +144,15 @@
                                                       </tr>
                                                       <tr>
                                                             <td><p>Subtotal</p></td>
-                                                            <td style="text-align: right"><p>{{$subtotal}}€</p></td>
+                                                            <td style="text-align: right"><p>{{$subtotal}} Fcfa</p></td>
                                                       </tr>
                                                       <tr>
                                                             <td><p>Rabais</p></td>
-                                                            <td style="text-align:right"> <p>{{$discount}}€</p></td>
+                                                            <td style="text-align:right"> <p>{{$discount}} Fcfa</p></td>
                                                       </tr>
                                                       <tr>
                                                             <td><p>Total</p></td>
-                                                            <td style="text-align:right"> <p>{{$subtotal - $discount}}€</p></td>
+                                                            <td style="text-align:right"> <p>{{$subtotal - $discount}} Fcfa</p></td>
                                                       </tr>
                                                 </table>
                   
@@ -171,7 +174,7 @@
                                     
                                         <p>
                                             <input type="radio" class="pay_method" id="stripe" name="payment_method" value="Stripe">
-                                             <label for="stripe">Stripe</label>
+                                             <label for="stripe">Payment Carte Bancaire (Stripe) </label>
                                                </p>
                                      
                                      
@@ -179,23 +182,23 @@
                                              <br>
                                              <div class="form-row row">
                                                    <div class="col-xs-12 form-group required">
-                                                         <label class="control-label">Name on Card</label>
+                                                         <label class="control-label">Nom sur la carte</label>
                                                          <input class="form-control" size="4" type="text" />
                                                    </div>
                                              </div>
                                              <div class="form-row row">
                                                    <div class="col-xs-12 form-group  required">
-                                                         <label class="control-label">Card Number</label>
+                                                         <label class="control-label">Numéro de la Carte</label>
                                                          <input autocomplete="off" class="form-control card-number" size="20" type="text" />
                                                    </div>
                                              </div>
                                              <div class="form-row row">
                                                    <div class="col-xs-12 col-md-4 form-group cvc required"><label class="control-label">CVC</label><input autocomplete="off" class="form-control card-cvc" placeholder="ex. 311" size="4" type="text" /></div>
-                                                   <div class="col-xs-12 col-md-4 form-group expiration required"><label class="control-label">Expiration Month</label><input class="form-control card-expiry-month" placeholder="MM" size="2" type="text" /></div>
-                                                   <div class="col-xs-12 col-md-4 form-group expiration required"><label class="control-label">Expiration Year</label><input class="form-control card-expiry-year" placeholder="YYYY" size="4" type="text" /></div>
+                                                   <div class="col-xs-12 col-md-4 form-group expiration required"><label class="control-label">Mois d'expiration</label><input class="form-control card-expiry-month" placeholder="MM" size="2" type="text" /></div>
+                                                   <div class="col-xs-12 col-md-4 form-group expiration required"><label class="control-label">Année d'expiration</label><input class="form-control card-expiry-year" placeholder="YYYY" size="4" type="text" /></div>
                                              </div>
                                              <div class="form-row row">
-                                                   <div class="col-md-12 error form-group hide"><div class="alert-danger alert">Please correct the errors and try again.</div></div>
+                                                   <div class="col-md-12 error form-group hide"><div class="alert-danger alert">Veuillez corriger les erreurs et réessayer.</div></div>
                                              </div>
                                        </div>
                                     </div>

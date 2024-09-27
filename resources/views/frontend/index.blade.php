@@ -23,7 +23,7 @@
                             <div class="form-group">
                                 <label>ARRIVÉ</label>
                                 <div class="input-group">
-                                    <input autocomplete="off" type="text" required name="check_in" class="form-control dt_picker" placeholder="yyy-mm-dd">
+                                    <input autocomplete="off" type="text" required name="check_in" class="form-control dt_picker" placeholder="dd-mm-yy">
                                     <span class="input-group-addon"></span>
                                 </div>
                                 <i class='bx bxs-chevron-down'></i>	
@@ -34,7 +34,7 @@
                             <div class="form-group">
                                 <label>DEPART</label>
                                 <div class="input-group">
-                                    <input autocomplete="off" type="text" required name="check_out" class="form-control dt_picker" placeholder="yyy-mm-dd">
+                                    <input autocomplete="off" type="text" required name="check_out" class="form-control dt_picker" placeholder="dd-mm-yy">
                                     <span class="input-group-addon"></span>
                                 </div>
                                 <i class='bx bxs-chevron-down'></i>	

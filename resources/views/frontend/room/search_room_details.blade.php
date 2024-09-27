@@ -10,7 +10,7 @@
                             <a href="index.html">Acceuil</a>
                         </li>
                         <li><i class='bx bx-chevron-right'></i></li>
-                        <li>Détails Chambre </li>
+                        <li>Détails Chambres </li>
                     </ul>
                     <h3>{{$roomdetails->type->name}}</h3>
                 </div>
@@ -25,7 +25,7 @@
                     <div class="col-lg-4">
                         <div class="room-details-side">
                             <div class="side-bar-form">
-                                <h3>Booking Sheet </h3>
+                                <h3>Formualaire de réservation </h3>
                                 <form action="{{route('user_booking_store',$roomdetails->id)}}" method="post" id="bk_form">
                                     @csrf
                                     <input type="hidden" name="room_id" value="{{$roomdetails->id}}">
@@ -93,15 +93,15 @@
                                                 <tbody>
                                                   <tr>
                                                     <td> <p>Sous-total</p> </td>
-                                                    <td style="text-align:right"> <span class="t_subtotal">0</span> </td>
+                                                    <td style="text-align:right"> <span class="t_subtotal">0 </span> Fcfa </td>
                                                   </tr>
                                                   <tr>
                                                     <td><p>Rabais</p></td>
-                                                    <td style="text-align:right"> <span class="t_discount">0</span> </td>
+                                                    <td style="text-align:right"> <span class="t_discount">0 </span> Fcfa</td>
                                                   </tr>
                                                   <tr>
                                                     <td><p>Total</p></td>
-                                                    <td style="text-align:right"> <span class="t_g_total">0</span> </td>
+                                                    <td style="text-align:right"> <span class="t_g_total">0 </span> Fcfa</td>
                                                   </tr>
 
             
@@ -144,7 +144,7 @@
                                 <ul>
                                     
                                     <li>
-                                       <b> Basic : {{$roomdetails->price}}€/Nuit</b>
+                                       <b> Basic : {{$roomdetails->price}}Fcfa/Nuit</b>
                                     </li> 
                                  
                                 </ul>
@@ -159,7 +159,8 @@
 
 
    <div class="side-bar-plan">
-                                <h3>Basic Plan Facilities</h3>
+                                <h3> Installations Facilités
+                                </h3>
                               
                                 <ul>
                                     @foreach ($facility as $fac)
@@ -226,8 +227,8 @@
  
 
                             </div>
-
-                            <div class="room-details-review">
+                            {{-- Commentaire Clients --}}
+                            {{-- <div class="room-details-review">
                                 <h2>Clients Review and Retting's</h2>
                                 <div class="review-ratting">
                                     <h3>Your retting: </h3>
@@ -252,7 +253,7 @@
                                         </div>
                                     </div>
                                 </form>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>
@@ -264,7 +265,7 @@
         <div class="room-details-other pb-70">
             <div class="container">
                 <div class="room-details-text">
-                    <h2>D'autres Chambres</h2>
+                    <h2>Chambres  Similaire</h2>
                 </div>
 
                 <div class="row ">
@@ -274,7 +275,7 @@
                             <div class="row align-items-center">
                                 <div class="col-lg-5 col-md-4 p-0">
                                     <div class="room-card-img">
-                                        <a href="{{ url('/room/details/'.$item->id) }}">
+                                       <a href="{{ route('search_room_details',$item->id.'?check_in='.\Carbon\Carbon::now()->format('Y-m-d').'&check_out='. \Carbon\Carbon::now()->format('Y-m-d') .'&person='.old('person')) }}">
                                             <img src="{{asset('upload/roomimg/'.$item->image)}}" alt="Images">
                                         </a>
                                     </div>
@@ -283,7 +284,7 @@
                                 <div class="col-lg-7 col-md-8 p-0">
                                     <div class="room-card-content">
                                          <h3>
-                                            <a href="{{ url('/room/details/'.$item->id) }}">{{$item['type']['name'] ?? null}}</a>
+                                           <a href="{{ route('search_room_details',$item->id.'?check_in='.\Carbon\Carbon::now()->format('Y-m-d').'&check_out='. \Carbon\Carbon::now()->format('Y-m-d') .'&person='.old('person')) }}">{{$item['type']['name'] ?? null}}</a>
                                         </h3>
                                         <span>{{$item->price}} / Par nuit </span>
                                         <div class="rating">
@@ -304,7 +305,7 @@
                                             <li><i class='bx bxs-hotel'></i> {{$item->bed_style}}</li>
                                         </ul>
                                         
-                                        <a href="room-details.html" class="book-more-btn">
+                                        <a class="book-more-btn" href="{{ route('search_room_details',$item->id.'?check_in='.\Carbon\Carbon::now()->format('Y-m-d').'&check_out='. \Carbon\Carbon::now()->format('Y-m-d') .'&person='.old('person')) }}">
                                            Reservez Maintenant
                                         </a>
                                     </div>
@@ -359,7 +360,7 @@
                   url: "{{ route('check_room_availability') }}",
                   data: {room_id:room_id, check_in:check_in, check_out:check_out},
                   success: function(data){
-                     $(".available_room").html('Availability : <span class="text-success">'+data['available_room']+' Rooms</span>');
+                     $(".available_room").html('Disponibilité : <span class="text-success">'+data['available_room']+' Chambres</span>');
                      $("#available_room").val(data['available_room']);
                      price_calculate(data['total_nights']);
                   }
