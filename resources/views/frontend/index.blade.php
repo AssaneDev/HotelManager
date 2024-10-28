@@ -5,7 +5,7 @@
     <div class="banner-area" style="height: 480px;">
         <div class="container">
             <div class="banner-content">
-                <h1>Découvrez un hôtel pour réserver une chambre adaptée</h1>
+                <h1>Bienvenue à l' Hotel Sérénité Suite</h1>
                 
                  
             </div>
