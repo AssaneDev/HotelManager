@@ -9,12 +9,12 @@
             <div class="inner-title">
                 <ul>
                     <li>
-                        <a href="index.html">Home</a>
+                        <a href="index.html">Acceuil</a>
                     </li>
                     <li><i class='bx bx-chevron-right'></i></li>
-                    <li>User Dashboard </li>
+                    <li>Tableau de bord</li>
                 </ul>
-                <h3>User Dashboard</h3>
+                <h3>Client</h3>
             </div>
         </div>
     </div>
@@ -41,13 +41,13 @@
                 <div class="row">
                     <div class="col-lg-12 col-md-12">
                         <div class="billing-details">
-                            <h3 class="title">User Profile   </h3>
+                            <h3 class="title">Profile   </h3>
 
                             <div class="row">
                                
                                 <div class="col-lg-6 col-md-6">
                                     <div class="form-group">
-                                        <label>Name<span class="required">*</span></label>
+                                        <label>Nom<span class="required">*</span></label>
                                         <input type="text" name="name" class="form-control" value=" {{$profileData->name}} ">
                                     </div>
                                 </div>
@@ -71,7 +71,7 @@
 
                                 <div class="col-lg-6 col-md-6">
                                     <div class="form-group">
-                                        <label>Phone <span class="required">*</span></label>
+                                        <label>Téléphone <span class="required">*</span></label>
                                         <input type="text" name="phone" class="form-control" value=" {{$profileData->phone}}">
                                     </div>
                                 </div>
@@ -80,7 +80,7 @@
 
 <div class="col-lg-12 col-md-6">
     <div class="form-group">
-        <label>User Profile  <span class="required">*</span></label>
+        <label>Profile  <span class="required">*</span></label>
         <input type="file" name="photo" class="form-control" id="image">
     </div>
 </div>
@@ -93,7 +93,7 @@
     </div>
 </div>
 
-<button type="submit" class="btn btn-danger">Save Changes </button>
+<button type="submit" class="btn btn-danger">Enrigistrer </button>
 </div>
 </div>
 </div>

@@ -32,7 +32,7 @@ $setting = App\Models\SiteSetting::find(1);
                         @auth
                         <li>
                             <i class='bx bxs-user-pin'></i>
-                            <a href="{{route('dashboard')}}">Dashboard</a>
+                            <a href="{{route('dashboard')}}">Tableau de board</a>
                         </li>
                         <li>
                             <i class='bx bxs-user-rectangle'></i>

@@ -6,12 +6,12 @@
             <div class="inner-title">
                 <ul>
                     <li>
-                        <a href="index.html">Home</a>
+                        <a href="">Acceuil</a>
                     </li>
                     <li><i class='bx bx-chevron-right'></i></li>
-                    <li>Sign Up</li>
+                    <li>S'inscrire</li>
                 </ul>
-                <h3>Sign Up</h3>
+                <h3>S'inscrire</h3>
             </div>
         </div>
     </div>
@@ -25,15 +25,15 @@
                     <div class="user-all-form">
                         <div class="contact-form">
                             <div class="section-title text-center">
-                                <span class="sp-color">Sign Up</span>
-                                <h2>Create an Account!</h2>
+                                <span class="sp-color">S'inscrire</span>
+                                <h2>Creer un compte!</h2>
                             </div>
                             <form method="POST" action="{{ route('register') }}">
                                 @csrf
                                 <div class="row">
                                     <div class="col-lg-12 ">
                                         <div class="form-group">
-                                            <input type="text" name="name" id="name" class="form-control" required data-error="Please enter your Username" placeholder="Username">
+                                            <input type="text" name="name" id="name" class="form-control" required data-error="Please enter your Username" placeholder="Nom">
                                         </div>
                                     </div>
 
@@ -45,26 +45,26 @@
 
                                     <div class="col-12">
                                         <div class="form-group">
-                                            <input class="form-control" type="password" name="password" placeholder="Password">
+                                            <input class="form-control" type="password" name="password" placeholder="Mot de pass">
                                         </div>
                                     </div>
 
                                     <div class="col-12">
                                         <div class="form-group">
-                                            <input class="form-control" type="password" name="password_confirmation" placeholder="Confirm Password">
+                                            <input class="form-control" type="password" name="password_confirmation" placeholder="Confimer le mot de pass">
                                         </div>
                                     </div>
     
                                     <div class="col-lg-12 col-md-12 text-center">
                                         <button type="submit" class="default-btn btn-bg-three border-radius-5">
-                                            Sign Up
+                                            S'inscrire
                                         </button>
                                     </div>
 
                                     <div class="col-12">
                                         <p class="account-desc">
-                                            Already have an account? 
-                                            <a href="{{route('login')}}">Sign In</a>
+                                           vous avez déja un compte? 
+                                            <a href="{{route('login')}}">Se connecter</a>
                                         </p>
                                     </div>
                                 </div>

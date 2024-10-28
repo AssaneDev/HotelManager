@@ -68,7 +68,7 @@
                <div class="d-flex align-items-center">
                    <div>
                        <p class="mb-0 text-secondary">Caisse du jour</p>
-                       <h4 class="my-1 text-warning">{{$todayPrice}} €</h4>
+                       <h4 class="my-1 text-warning">{{$todayPrice}} F</h4>
                        {{-- <p class="mb-0 font-13">+8.4% from last week</p> --}}
                    </div>
                    <div class="widgets-icons-2 rounded-circle bg-gradient-orange text-white ms-auto"><i class='bx bxs-group'></i>

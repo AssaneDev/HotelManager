@@ -8,7 +8,7 @@
             <div class="inner-title">
                 <ul>
                     <li>
-                        <a href="index.html">Home</a>
+                        <a href="">Acceuil</a>
                     </li>
                     <li><i class='bx bx-chevron-right'></i></li>
                     <li>Contact</li>
@@ -26,7 +26,7 @@
                 <div class="col-lg-6">
                     <div class="contact-content">
                         <div class="section-title">
-                            <h2>Let's Start to Give Us a Message and Contact With Us</h2>
+                            <h2>Nous envoyer un message et à nous contacter</h2>
                         </div>
                         <div class="contact-img">
                             <img src=" {{asset('frontend/assets/img/contact/contact-img1.jpg')}} " alt="Images">
@@ -55,21 +55,21 @@
 
                                 <div class="col-lg-6 col-sm-6">
                                     <div class="form-group">
-                                        <input type="text" name="phone" id="phone_number" required data-error="Please enter your number" class="form-control" placeholder="Phone">
+                                        <input type="text" name="phone" id="phone_number" required data-error="Please enter your number" class="form-control" placeholder="Téléphone">
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
 
                                 <div class="col-lg-6 col-sm-6">
                                     <div class="form-group">
-                                        <input type="text" name="subject" id="msg_subject" class="form-control" required data-error="Please enter your subject" placeholder="Your Subject">
+                                        <input type="text" name="subject" id="msg_subject" class="form-control" required data-error="Please enter your subject" placeholder="Sujet">
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
 
                                 <div class="col-lg-12 col-md-12">
                                     <div class="form-group">
-                                        <textarea name="message" class="form-control" id="message" cols="30" rows="8" required data-error="Write your message" placeholder="Your Message"></textarea>
+                                        <textarea name="message" class="form-control" id="message" cols="30" rows="8" required data-error="Write your message" placeholder="Message"></textarea>
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
@@ -103,8 +103,7 @@
                         <div class="section-title">
                             <h2>Contacts Info</h2>
                             <p>
-                                We are one of the best agency and we can easily make a contract
-                                us anytime on the below details.
+                                Nous sommes l'un des meilleurs hotels du Sénégal.
                             </p>
                         </div>
 
@@ -150,7 +149,7 @@
     <!-- Map Area -->
     <div class="map-area">
         <div class="container-fluid m-0 p-0">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d50194.82376159623!2d-79.09792989247224!3d38.159337740034566!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b4a08eb8621697%3A0xe5d6e4710a09b66e!2zU3RhdW50b24sIOCmreCmvuCmsOCnjeCmnOCmv-CmqOCmv-Cmr-CmvOCmviAyNDQwMSwg4Kau4Ka-4Kaw4KeN4KaV4Ka_4KaoIOCmr-CngeCmleCnjeCmpOCmsOCmvuCmt-CnjeCmn-CnjeCmsA!5e0!3m2!1sbn!2sbd!4v1604126938221!5m2!1sbn!2sbd"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d123499.67418486426!2d-17.540319723064478!3d14.6919495631251!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0xec173e2c9636c0f%3A0x4690252c8ab481dd!2sPOINT%20E%20RUE%201%20x%20MAISON%20DES%20ECRIVAINS%2C%20Dakar%2C%20Dakar%2002302!3m2!1d14.6919641!2d-17.457917899999998!5e0!3m2!1sen!2ssn!4v1730144327950!5m2!1sen!2ssn" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
     </div>
     <!-- Map Area End -->

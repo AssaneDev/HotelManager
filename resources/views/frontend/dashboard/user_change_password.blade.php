@@ -9,12 +9,12 @@
             <div class="inner-title">
                 <ul>
                     <li>
-                        <a href="index.html">Home</a>
+                        <a href="index.html">Acceuil</a>
                     </li>
                     <li><i class='bx bx-chevron-right'></i></li>
-                    <li>User Change Password </li>
+                    <li>Changer de mot de pass</li>
                 </ul>
-                <h3>User Change Password</h3>
+                <h3>Changer de mot de pass</h3>
             </div>
         </div>
     </div>
@@ -41,7 +41,7 @@
                 <div class="row">
                     <div class="col-lg-12 col-md-12">
                         <div class="billing-details">
-                            <h3 class="title">User Profile   </h3>
+                            <h3 class="title">Profile   </h3>
 
                             <div class="row">
                                
@@ -90,7 +90,7 @@
 
 
 
-<button type="submit" class="btn btn-danger">Save Changes </button>
+<button type="submit" class="btn btn-danger">Enrigistrer </button>
 </div>
 </div>
 </div>
