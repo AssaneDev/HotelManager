@@ -90,10 +90,14 @@ $completedReservations = $allBookings->where('status', 1)->count();
                                 </div>
                             </div>
 
-                            <!-- Message pour les réservations en attente -->
+                            <!-- Messages pour les réservations -->
                             @if ($ongoingReservations > 0)
                                 <div class="alert alert-info mt-4" role="alert">
                                     <p>Votre réservation est bien prise en compte ! 😊 Nous vous tiendrons informé dès qu’elle sera confirmée. En attendant, restez en contact pour toute question.</p>
+                                </div>
+                            @elseif ($completedReservations > 0)
+                                <div class="alert alert-success mt-4" role="alert">
+                                    <p>Bonne nouvelle ! 🎉 Votre réservation a été confirmée. Nous sommes impatients de vous accueillir et de rendre votre séjour exceptionnel !</p>
                                 </div>
                             @endif
                         </div>
