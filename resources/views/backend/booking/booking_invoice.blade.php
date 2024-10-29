@@ -1,130 +1,145 @@
 <!doctype html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Invoice</title>
+    <title>Facture</title>
 
-<style type="text/css"> 
-    * {
-        font-family: Verdana, Arial, sans-serif;
-    }
-    table{
-        font-size: x-small;
-    }
-    tfoot tr td{
-        font-weight: bold;
-        font-size: x-small;
-    }
-    .gray {
-        background-color: lightgray
-    }
-    .font{
-      font-size: 15px;
-    }
-    .authority {
-        /*text-align: center;*/
-        float: right
-    }
-    .authority h5 {
-        margin-top: -10px;
-        color: green;
-        /*text-align: center;*/
-        margin-left: 35px;
-    }
-    .thanks p {
-        color: green;;
-        font-size: 16px;
-        font-weight: normal;
-        font-family: serif;
-        margin-top: 20px;
-    }
-</style>
-
+    <style type="text/css">
+        * {
+            font-family: Verdana, Arial, sans-serif;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7fa;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: small;
+        }
+        th {
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+        }
+        td {
+            padding: 10px;
+            border-bottom: 1px solid #dee2e6;
+        }
+        .invoice-header {
+            background-color: #007bff;
+            color: white;
+            padding: 20px;
+        }
+        .invoice-header h2 {
+            font-size: 26px;
+            margin: 0;
+        }
+        .invoice-details, .invoice-summary {
+            background-color: white;
+            padding: 20px;
+            margin-top: 10px;
+        }
+        .invoice-summary {
+            border-top: 2px solid #007bff;
+        }
+        .font {
+            font-size: 15px;
+        }
+        .thanks {
+            text-align: center;
+            color: #007bff;
+            font-size: 16px;
+            margin-top: 30px;
+            font-family: serif;
+        }
+        .authority {
+            float: right;
+            text-align: center;
+            margin-top: 30px;
+        }
+        .authority p {
+            margin: 0;
+            font-size: 14px;
+        }
+        .authority h5 {
+            margin: 0;
+            color: #007bff;
+        }
+    </style>
 </head>
 <body>
 
-  <table width="100%" style="background: #F7F7F7; padding:0 20px 0 20px;">
-    <tr>
-        <td valign="top">
-          <!-- {{-- <img src="" alt="" width="150"/> --}} -->
-          <h2 style="color: green; font-size: 26px;"><strong>Hotel</strong></h2>
-        </td>
-        <td align="right">
-            <pre class="font" >
-               Hotel AmadouLodge
-               Email:support@lodge.com <br>
-               Mob: 1245454545 <br>
-               Saly 1207,Dhanmondi:#4 <br>
-              
-            </pre>
-        </td>
-    </tr>
-
-  </table>
-
-
-  <table width="100%" style="background:white; padding:2px;">
-    <thead class="table-light">
+<div class="invoice-header">
+    <table>
         <tr>
-            <th>Type Chambre</th>
-            <th>Total chambre</th>
-            <th>Prix</th>
-            <th>Date Entré / Sortie</th>
-            <th>Total Nuits</th>
-            <th>Total</th>
-
+            <td>
+                <h2><strong>Hotel</strong></h2>
+            </td>
+            <td align="right">
+                <pre class="font">
+Hotel Sérénité Suite
+Email: support@suite.com
+Mob: 77 111 74 20
+Saly En face auchan
+                </pre>
+            </td>
         </tr>
+    </table>
+</div>
 
+<div class="invoice-details">
+    <table>
+        <thead>
+            <tr>
+                <th>Type Chambre</th>
+                <th>Total Chambre</th>
+                <th>Prix</th>
+                <th>Date Entrée / Sortie</th>
+                <th>Total Nuits</th>
+                <th>Total</th>
+            </tr>
+        </thead>
         <tbody>
             <tr>
                 <td>{{$editData->room->type->name}}</td>
-                <td> {{$editData->number_of_rooms}} </td>
-                <td>{{$editData->actual_price}} €</td>
-                <td> <span class="badge bg-primary"> {{$editData->check_in}}</span> / <br> <span class="badge bg-warning text-dark">{{$editData->check_out}} </span> </td>
+                <td>{{$editData->number_of_rooms}}</td>
+                <td>{{$editData->actual_price}} Fcfa</td>
+                <td><span class="badge bg-primary">{{$editData->check_in}}</span> / <span class="badge bg-warning text-dark">{{$editData->check_out}}</span></td>
                 <td>{{$editData->total_night}}</td>
-                <td>{{$editData->actual_price * $editData->number_of_rooms }}  €</td>
-
-                
-
+                <td>{{$editData->actual_price * $editData->number_of_rooms}} Fcfa</td>
             </tr>
         </tbody>
+    </table>
+</div>
 
-     </thead>
-  </table>
+<div class="invoice-summary">
+    <table>
+        <tr>
+            <td><strong>Sous-total:</strong></td>
+            <td align="right">{{$editData->subtotal}} Fcfa</td>
+        </tr>
+        <tr>
+            <td><strong>Réduction:</strong></td>
+            <td align="right">{{$editData->discount}} Fcfa</td>
+        </tr>
+        <tr>
+            <td><strong>Total Général:</strong></td>
+            <td align="right">{{$editData->total_price}} Fcfa</td>
+        </tr>
+    </table>
+</div>
 
-  <table width="100%" style="background: #F7F7F7; padding:0 5 0 5px;" class="font">
-    <tr>
-        <td>Subtotal</td>
-        <td> {{$editData->subtotal}} € </td>
-    </tr>
-    <tr>
-        <td>Discount</td>
-        <td> {{$editData->discount}} €</td>
-    </tr>
-    <tr>
-        <td>Grand Total</td>
-        <td> {{$editData->total_price}} €</td>
-    </tr>
-              
-  </table>
-  <br/>
- 
+<div class="thanks">
+    <p>Merci pour votre réservation !</p>
+</div>
 
+<div class="authority">
+    <p>-----------------------------------</p>
+    <h5>Signature d'Autorité:</h5>
+</div>
 
-   
- 
-  <table class="table test_table" style="float:right; border:none">
-                        
- </table>
-
-
-  <div class="thanks mt-3">
-    <p>Thanks For Your Booking..!!</p>
-  </div>
-  <div class="authority float-right mt-5">
-      <p>-----------------------------------</p>
-      <h5>Authority Signature:</h5>
-    </div>
 </body>
 </html>

@@ -200,7 +200,7 @@ class BookingController extends Controller
         //notification
         Notification::send($user, new BookingComplete($request->name));
 
-        return  redirect('/')->with($notification);
+        return  redirect('/dashboard')->with($notification);
 
 
 
