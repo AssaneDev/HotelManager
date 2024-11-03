@@ -41,7 +41,7 @@
                             <th>Nombre de persone</th>
                             <th>Payment</th>
                             <th>Status</th>
-                            <th>Action</th>
+                            {{-- <th>Action</th> --}}
 
 
 
@@ -78,11 +78,11 @@
                             @endif
                             </td>
                            
-                            <td>
+                            {{-- <td>
                                
                                 <a href="{{route('delete.team',$item->id)}}" class="btn btn-danger px-3 radius-30" id="delete"> Supprimer</a>
 
-                            </td>
+                            </td> --}}
                         </tr>
                       @endforeach
                        

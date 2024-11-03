@@ -120,6 +120,112 @@
   background-color: #000;
 }
 
+.hero-section {
+    background: linear-gradient(to right, #4e54c8, #8f94fb);
+    color: white;
+    padding: 4em 0;
+}
+
+.hero-section h1 {
+    font-size: 3em;
+    margin-bottom: 0.5em;
+}
+
+.hero-section .subtitle {
+    font-size: 1.5em;
+    margin-bottom: 1em;
+    color: #d1d1d1;
+}
+
+.hero-section p {
+    font-size: 1.2em;
+    margin-bottom: 1.5em;
+}
+
+.hero-section .cta-buttons .btn {
+    padding: 0.8em 2em;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+}
+
+.hero-section .btn-primary {
+    background-color: #f8a488;
+    color: #fff;
+    border-radius: 25px;
+}
+
+.hero-section .btn-outline-light {
+    background: transparent;
+    border: 2px solid #f8a488;
+    color: #f8a488;
+    border-radius: 25px;
+}
+
+.hero-section .btn-primary:hover, .hero-section .btn-outline-light:hover {
+    background-color: #e78e75;
+    color: #fff;
+}
+.services-section {
+    padding: 4em 0;
+    background: #f7f7f7;
+}
+
+.services-content h1 {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 1em;
+    position: relative;
+}
+
+.services-content h1::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: #8f94fb;
+    margin: 0.5em auto;
+}
+
+.services-content p {
+    color: #666;
+    font-size: 1.2em;
+    max-width: 700px;
+    margin: 0 auto 2em;
+}
+
+.service-card {
+    padding: 2em 1em;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.service-card h2 {
+    font-size: 1.5em;
+    color: #4e54c8;
+    margin: 1em 0;
+}
+
+.service-card p {
+    color: #666;
+    font-size: 1em;
+}
+
+.services-icon img {
+    transition: transform 0.3s;
+}
+
+.service-card:hover .services-icon img {
+    transform: scale(1.1);
+}
+
+
 
 </style>
 <div class="wrapper animsition" data-animsition-in-class="fade-in" data-animsition-in-duration="1000"
@@ -180,72 +286,70 @@
                 <div class="hero-content app-hero-content text-center">
                     <div class="row justify-content-md-center">
                         <div class="col-md-10">
-                            <h1 class="wow fadeInUp" data-wow-delay="0s">Simplifiez la gestion de votre hôtel </h1>
+                            <h1 class="wow fadeInUp" data-wow-delay="0s">Simplifiez la gestion de votre hôtel</h1>
+                            <h3 class="subtitle wow fadeInUp" data-wow-delay="0.1s">La gestion hôtelière, optimisée et sans effort</h3>
                             <p class="wow fadeInUp" data-wow-delay="0.2s">
-                                offrez une expérience client inégalée avec Hotel Ges+. <br class="hidden-xs"> Plus un site web intuitifs
+                                Offrez une expérience client inégalée avec Hotel Ges+. <br class="hidden-xs"> Le tout dans une plateforme intuitive.
                             </p>
-                            <a class="btn btn-primary btn-action" data-wow-delay="0.2s" href="#!">Voir en live</a>
-                            <a class="btn btn-primary btn-action" data-wow-delay="0.2s" href="#!">Acheter Maintenant</a>
+                            <div class="cta-buttons">
+                                <a class="btn btn-primary btn-action wow fadeInUp" data-wow-delay="0.3s" href="#!">Découvrez en Live</a>
+                                <a class="btn btn-outline-light btn-action wow fadeInUp" data-wow-delay="0.3s" href="#!">Commencez Maintenant</a>
+                            </div>
                         </div>
                         <div class="col-md-12">
-                            <div class="hero-image">
-                                <img class="img-fluid" src=" {{asset('leanding/assets/images/home.png')}} " alt="" />
+                            <div class="hero-image wow fadeInUp" data-wow-delay="0.4s">
+                                <img class="img-fluid" src="{{ asset('leanding/assets/images/home.png') }}" alt="" />
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        
         <div class="services-section text-center" id="services">
-            <!-- Services section (small) with icons -->
             <div class="container">
-                <div class="row  justify-content-md-center">
+                <div class="row justify-content-md-center">
                     <div class="col-md-8">
                         <div class="services-content">
-                            <h1 class="wow fadeInUp" data-wow-delay="0s">Backend Puissant pour les Administrateurs
-                            </h1>
+                            <h1 class="wow fadeInUp" data-wow-delay="0s">Backend Puissant pour les Administrateurs</h1>
                             <p class="wow fadeInUp" data-wow-delay="0.2s">
-                                Accédez à une vue d’ensemble de toutes les réservations du jour en un coup d'œil. Consultez le total des réservations, les réservations en attente, les réservations confirmées, ainsi que la caisse du jour. 
+                                Accédez à une vue d’ensemble de toutes les réservations du jour en un coup d'œil. Consultez le total des réservations, les réservations en attente, les réservations confirmées, ainsi que la caisse du jour.
                             </p>
                         </div>
                     </div>
                     <div class="col-md-12 text-center">
                         <div class="services">
                             <div class="row">
-                                <div class="col-sm-4 wow fadeInUp" data-wow-delay="0.2s">
+                                <div class="col-sm-4 wow fadeInUp service-card" data-wow-delay="0.2s">
                                     <div class="services-icon">
-                                        <img src=" {{asset('leanding/assets/logos/icon1.png')}} " height="60" width="60" alt="Service" />
+                                        <img src="{{asset('leanding/assets/logos/icon1.png')}}" height="60" width="60" alt="Vue d'ensemble" />
                                     </div>
                                     <div class="services-description">
-                                        <h1>Vue d'ensemble</h1>
+                                        <h2>Vue d'ensemble</h2>
                                         <p>
-                                            Accédez à une vue d’ensemble de toutes les réservations du jour en un coup d'œil. Consultez le total des réservations, les réservations en attente, les réservations confirmées, ainsi que la caisse du jour.
+                                            Visualisez toutes les <strong>réservations</strong> du jour et accédez aux détails des <strong>confirmations</strong> et <strong>paiements</strong> en un seul coup d'œil.
                                         </p>
                                     </div>
                                 </div>
-                                <div class="col-sm-4 wow fadeInUp" data-wow-delay="0.3s">
+                                <div class="col-sm-4 wow fadeInUp service-card" data-wow-delay="0.3s">
                                     <div class="services-icon">
-                                        <img class="icon-2" src=" {{asset('leanding/assets/logos/icon2.png')}} " height="60" width="60"
-                                            alt="Service" />
+                                        <img src="{{asset('leanding/assets/logos/icon2.png')}}" height="60" width="60" alt="Visualisation des données" />
                                     </div>
                                     <div class="services-description">
-                                        <h1>Visualisez vos données</h1>
+                                        <h2>Visualisez vos données</h2>
                                         <p>
-                                            grâce à des graphiques statistiques clairs et consultez la liste complète des réservations.
-                                            Recevez des notifications en temps réel avec tous les détails nécessaires à chaque nouvelle réservation. 
+                                            Obtenez des graphiques <strong>statistiques</strong> clairs et des <strong>notifications en temps réel</strong> pour chaque nouvelle réservation.
                                         </p>
                                     </div>
                                 </div>
-                                <div class="col-sm-4 wow fadeInUp" data-wow-delay="0.4s">
+                                <div class="col-sm-4 wow fadeInUp service-card" data-wow-delay="0.4s">
                                     <div class="services-icon">
-                                        <img class="icon-3" src=" {{asset('leanding/assets/logos/icon3.png')}} " height="60" width="60"
-                                            alt="Service" />
+                                        <img src="{{asset('leanding/assets/logos/icon3.png')}}" height="60" width="60" alt="Recherche et Réservation Simplifiées" />
                                     </div>
                                     <div class="services-description">
-                                        <h1>Recherche et Réservation Simplifiées  </h1>
+                                        <h2>Recherche et Réservation Simplifiées</h2>
                                         <p>
-                                           
-                                            Permettez à vos clients de rechercher facilement les chambres disponibles en fonction de leurs dates et du nombre de personnes. 
+                                            Permettez à vos clients de rechercher des chambres disponibles selon leurs dates et le nombre de personnes.
                                         </p>
                                     </div>
                                 </div>
@@ -255,6 +359,7 @@
                 </div>
             </div>
         </div>
+        
         <div class="flex-features" id="features">
             <div class="container">
                 <div class="flex-split">

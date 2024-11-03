@@ -71,6 +71,7 @@
 	text-indent: -99999px;
 	overflow: hidden;
 	background-repeat: no-repeat;
+	
 }
 
 .ui-widget-icon-block {
@@ -316,10 +317,13 @@ button.ui-button::-moz-focus-inner {
 	width: 17em;
 	padding: .2em .2em 0;
 	display: none;
+	color: red;
 }
 .ui-datepicker .ui-datepicker-header {
 	position: relative;
 	padding: .2em 0;
+	color: green;
+	background-color: greenyellow;
 }
 .ui-datepicker .ui-datepicker-prev,
 .ui-datepicker .ui-datepicker-next {
@@ -327,6 +331,7 @@ button.ui-button::-moz-focus-inner {
 	top: 2px;
 	width: 1.8em;
 	height: 1.8em;
+	color: green;
 }
 .ui-datepicker .ui-datepicker-prev-hover,
 .ui-datepicker .ui-datepicker-next-hover {
@@ -1062,6 +1067,8 @@ a.ui-button:active,
 .ui-icon {
 	width: 16px;
 	height: 16px;
+	background-color: #003eff;
+	border-radius: 40%;
 }
 .ui-icon,
 .ui-widget-content .ui-icon {
