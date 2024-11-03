@@ -50,6 +50,9 @@
 									<div class="text-center mb-4">
 										<h5 class="">Admin Connexion</h5>
 										<p class="mb-0">Veuillez vous connecter à votre compte</p>
+										<h6>Email: admin@hotel.com</h6>
+										<h6>Mot de pass: 12345678</h6>
+
 									</div>
 									<div class="form-body">
 										

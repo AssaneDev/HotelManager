@@ -45,7 +45,7 @@
 
                                     <div class="col-12">
                                         <div class="form-group">
-                                            <input class="form-control" type="password" name="password" placeholder="Mot de pass">
+                                            <input class="form-control" type="password" name="password" placeholder="Saisir 8 Caractéres">
                                         </div>
                                     </div>
 
