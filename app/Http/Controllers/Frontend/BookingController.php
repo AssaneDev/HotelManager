@@ -231,7 +231,7 @@ class BookingController extends Controller
             'phone' => $sendmail->phone,
         ];
 
-        Mail::to($sendmail->email)->send(new BookConfirm($data));
+        // Mail::to($sendmail->email)->send(new BookConfirm($data));
 
         // Start end Email
        $booking = Booking::find($id);
