@@ -23,33 +23,39 @@ $setting = App\Models\SiteSetting::find(1);
         </li>
         {{-- room --}}
         <li class="menu-label">Gestion Réservation</li>
-        <li>
-            <a href="javascript:;" class="has-arrow">
-                <div class="parent-icon"><i class="bx bx-bed"></i>
-                </div>
-                <div class="menu-title">Gestion Chambre</div>
-            </a>
-            <ul>
-                <li> <a href="{{route('room.type.list')}}"><i class='bx bx-radio-circle'></i>Types de Chambre</a>
-                </li>
-               
-             
-            </ul>
-        </li>
+        @if(Auth::User()->can('gestion.reservation	'))
+            <li>
+                <a href="javascript:;" class="has-arrow">
+                    <div class="parent-icon"><i class="bx bx-bed"></i>
+                    </div>
+                    <div class="menu-title">Gestion Chambre</div>
+                </a>
+                <ul>
+                    <li> <a href="{{route('room.type.list')}}"><i class='bx bx-radio-circle'></i>Types de Chambre</a>
+                    </li>
+                
+                
+                </ul>
+            </li>
+       @endif     
+
         <li>
             <a href="javascript:;" class="has-arrow">
                 <div class="parent-icon"><i class='bx bx-book-add'></i>
                 </div>
                 <div class="menu-title">Réservation</div>
             </a>
-            <ul>
-                <li> <a href="{{route('booking.list')}}"><i class='bx bx-radio-circle'></i>Liste Réservation</a>
-                </li>
-                <li> <a href="{{route('add.room.list')}}"><i class='bx bx-radio-circle'></i>Ajouter Réservation</a>
-                </li> 
-                
-            </ul>
+            @if(Auth::User()->can('reservation.chambre'))
+                <ul>
+                    <li> <a href="{{route('booking.list')}}"><i class='bx bx-radio-circle'></i>Liste Réservation</a>
+                    </li>
+                    <li> <a href="{{route('add.room.list')}}"><i class='bx bx-radio-circle'></i>Ajouter Réservation</a>
+                    </li> 
+                    
+                </ul>
+            @endif 
         </li>
+
         <li>
             <a class="has-arrow" href="javascript:;">
                 <div class="parent-icon"><i class='bx bx-buildings'></i>
@@ -63,7 +69,7 @@ $setting = App\Models\SiteSetting::find(1);
               
             </ul>
         </li>
-          
+     @if(Auth::User()->can('rapport.reservation	'))
         <li>
             <a class="has-arrow" href="javascript:;">
                 <div class="parent-icon"><i class='bx bx-abacus'></i>
@@ -77,18 +83,21 @@ $setting = App\Models\SiteSetting::find(1);
               
             </ul>
         </li>
-        <li>
-            <a class="has-arrow" href="javascript:;">
-                <div class="parent-icon"><i class='bx bx-message-minus'></i>
-                </div>
-                <div class="menu-title">Message Contact</div>
-            </a>
-            <ul>
-                <li> <a href="{{route('contact.message')}}"><i class='bx bx-radio-circle'></i>message</a>
-                </li>
-              
-            </ul>
-        </li>
+       @endif 
+        @if(Auth::User()->can('message.menue'))
+            <li>
+                <a class="has-arrow" href="javascript:;">
+                    <div class="parent-icon"><i class='bx bx-message-minus'></i>
+                    </div>
+                    <div class="menu-title">Message Contact</div>
+                </a>
+                <ul>
+                    <li> <a href="{{route('contact.message')}}"><i class='bx bx-radio-circle'></i>message</a>
+                    </li>
+                
+                </ul>
+            </li>
+        @endif
         {{-- room --}}
         <li class="menu-label">Gestion Du Site </li>
         @if(Auth::User()->can('equipe.menu'))
@@ -131,6 +140,7 @@ $setting = App\Models\SiteSetting::find(1);
            
         </li>
         @endif
+        @if(Auth::User()->can('temoignage.menue'))
         <li>
             <a class="has-arrow" href="javascript:;">
                 <div class="parent-icon"><i class='bx  bx-comment-check'></i>
@@ -146,6 +156,8 @@ $setting = App\Models\SiteSetting::find(1);
               
             </ul>
         </li>
+        @endif
+         @if(Auth::User()->can('blog.menue'))
         <li>
             <a class="has-arrow" href="javascript:;">
                 <div class="parent-icon"><i class='bx bx-message-detail'></i>
@@ -161,6 +173,9 @@ $setting = App\Models\SiteSetting::find(1);
               
             </ul>
         </li>
+        @endif  	
+        @if(Auth::User()->can('commentaire.menue'))
+
         <li>
             <a class="has-arrow" href="javascript:;">
                 <div class="parent-icon"><i class='bx bx-comment-edit'></i>
@@ -176,6 +191,9 @@ $setting = App\Models\SiteSetting::find(1);
               
             </ul>
         </li>  
+        @endif 
+
+         @if(Auth::User()->can('galerie.menue'))
 
         <li>
             <a class="has-arrow" href="javascript:;">
@@ -189,6 +207,10 @@ $setting = App\Models\SiteSetting::find(1);
               
             </ul>
         </li>
+        @endif
+
+	
+        
         
         {{-- -------------- --}}
        
@@ -201,7 +223,7 @@ $setting = App\Models\SiteSetting::find(1);
         
           
            
-        </li>
+        </li> 	
       
         <li class="menu-label">Roles & Permissions</li>
         <li>
@@ -259,7 +281,7 @@ $setting = App\Models\SiteSetting::find(1);
             </ul>
         </li>
 
-       
+ 
         
         <li class="menu-label">Others</li>
         <li>

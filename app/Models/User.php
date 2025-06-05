@@ -9,9 +9,10 @@ use Illuminate\Notifications\Notifiable;
 use Spatie\Permission\Traits\HasRoles;
 use Illuminate\Support\Facades\DB;
 
+
 class User extends Authenticatable
 {
-    use HasFactory, Notifiable, HasRoles;
+    use  HasFactory, Notifiable, HasRoles;
 
     /**
      * The attributes that are mass assignable.
@@ -57,17 +58,15 @@ class User extends Authenticatable
         return $permissions;                        
     }
 
-    public static function roleHasPermissions($role,$permissions){
-
-        $haspermission = true;
-
-        foreach ($permissions as $key => $permission) {
-            if(!$role->hasPermissionTo($permission->name)){
-                $haspermission = false;
-            }
-            return $haspermission;
-            # code...
+   public static function roleHasPermissions($role, $permissions)
+{
+    foreach ($permissions as $permission) {
+        $hasPermission = true;
+        if (!$role->hasPermissionTo($permission->name)) {
+            return false;
         }
-
     }
+    return $hasPermission;
+}
+
 }
